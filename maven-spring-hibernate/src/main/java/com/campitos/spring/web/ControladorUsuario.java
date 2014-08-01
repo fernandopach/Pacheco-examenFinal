@@ -66,7 +66,7 @@ public class ControladorUsuario {
  
 	
  
-		//convert JSON string to Map
+		//convertimos el Json a map
 		map = mapper.readValue(json, 
 		    new TypeReference<HashMap<String,String>>(){});
  
