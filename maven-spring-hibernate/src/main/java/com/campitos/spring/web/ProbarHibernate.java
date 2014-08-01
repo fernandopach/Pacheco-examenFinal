@@ -25,8 +25,8 @@ public class ProbarHibernate {
 Session sesion=  HibernateUtilidades.getSessionFactory().openSession();
 // primer paso: Empezar una sesion
 
-sesion.getTransaction().begin();
-sesion.save(new Usuario(1, "Juan Carlos",40000f));
+//sesion.getTransaction().begin();
+//sesion.save(new Usuario(1, "Juan Carlos",40000f));
 //sesion.update(new Usuario(1,"pwedro", 400000f)); 
 /*
  Query q= sesion.createQuery("from Usuario");

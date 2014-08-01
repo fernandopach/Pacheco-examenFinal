@@ -4,6 +4,8 @@
     <jta-data-source>sasas</jta-data-source>
     <class>com.campitos.spring.web.Calificacion</class>
     <class>com.campitos.spring.web.Alumno</class>
+    <class>com.campitos.spring.web.Nomina</class>
+    <class>com.campitos.spring.web.Usuario</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties/>
   </persistence-unit>

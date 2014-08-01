@@ -20,6 +20,8 @@ public class DAOCalificacionImpl extends DAO {
     
  public void agregarCalificacion(Calificacion c) {
     begin();
+ 
+    
     getSession().save(c);
     commit();
     close();

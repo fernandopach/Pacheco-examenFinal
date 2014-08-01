@@ -4,10 +4,11 @@
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/proyecto1?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
-
+    <property name="hibernate.connection.password">root</property>
    <mapping class="com.campitos.spring.web.Usuario" />
+   <mapping class="com.campitos.spring.web.Nomina" />
    <mapping class="com.campitos.spring.web.Alumno" />
    <mapping class="com.campitos.spring.web.Calificacion" />
   </session-factory>
