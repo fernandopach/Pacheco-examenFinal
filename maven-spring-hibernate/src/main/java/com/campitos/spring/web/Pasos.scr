@@ -12,6 +12,7 @@ servicios (/servicios/*)
    ES ir a archivom nuevo -> hibernate -> hiberntae configuration file wizard
 PAGINA DE HIBERNATE
 http://docs.jboss.org/hibernate/orm/4.3/manual/en-US/html_single/
+
 5. IMPORTANTE: Recuerda que cuandoo lo creas netbeans te bombardea de
     dependencias innecesarias en tu pom.xml Regresen hibernate como lo
    tenia solo el hibernate-core y le ponen nuevamente la opciion "build with depednencies"
