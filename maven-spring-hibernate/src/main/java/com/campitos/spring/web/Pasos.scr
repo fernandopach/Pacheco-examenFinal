@@ -1,0 +1,53 @@
+Passos a seguir
+1. Verificar dependencias de spring e hibernate, asi como de 
+    mapeo json. Nota: Usar la depednencia hibernate-core
+2. Verficar que tenngas los archivos de configuracion de spring:
+    WebAp.java y WEbApConfig.java. Verficar en el primero el mapeo a los
+servicios (/servicios/*)
+
+3. Crear tu o tus tablas. IMPORTANTE:(Todas deben contener una rpimary
+    key). Para poder hacer el mapeo y por cuestiones de normalizacion
+
+4. Crear el archivo de configuracion de Hibernate por medio del wizard
+   ES ir a archivom nuevo -> hibernate -> hiberntae configuration file wizard
+PAGINA DE HIBERNATE
+http://docs.jboss.org/hibernate/orm/4.3/manual/en-US/html_single/
+
+5. IMPORTANTE: Recuerda que cuandoo lo creas netbeans te bombardea de
+    dependencias innecesarias en tu pom.xml Regresen hibernate como lo
+   tenia solo el hibernate-core y le ponen nuevamente la opciion "build with depednencies"
+
+6. POr cada tabla generar su respectiva entity class a partir de la base de datos por medio del wizard
+   de la opcion new file -> Persistence -> entity classes from database. No agregar ninguna checkbox
+   solamente de de mapeo de columnas.
+7. Modicar las clases creadas a su beneplacito, es decir, agregarles constructores, etc, etc, borra algunas
+   cosas etc etc.
+8. Verficar que exista la clase DAO que les apse, usar esa porque maneja threads locales a menos
+  que tengan una propia que haga lo mismo, que sea a prueba de Threads para nuestra SessionFactory
+9. Por cada clase entity generar una dao correspondiente a cada una, no olvides heredar la clase dao
+   para que uses los metodos que abren,  hacen commit y cierran la sesion: que son los que quedaron a prueba
+Threads (Ejemplo: UsuarioDAOImpl). Esta clase encapsula todas las operaciones para cada Entity.: insert update
+daelete select select por id.
+
+10. En el archivo hibernate.cfg.xml que se genero en la carpeta other ->resources de tu proeycto
+  el mapeo de la s clases para que als "vea" hibernate. Ejemplo: <mapping class="Com.ect.etc.TuClase" />
+
+11. OPor cada entity class crear un controler con los respectivos metods para las operaciones de los DAO's del
+    paso 9 y usando los metodos de http adecuados a cada operacion (get, post, put, etc, etc).
+12. Crear tu cliente web y suerte!!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
