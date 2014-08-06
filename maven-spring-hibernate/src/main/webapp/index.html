@@ -16,22 +16,28 @@
     </head>
     <body>
         <h1>Hello World!</h1>
+        <input type="text" id="nombre" />
+        <input type="text" id="sueldo" />
+        <input type="button" value="guardar usuario" id="boton-guardar">
+        
         <script>
         
-        
+       $("#boton-recobrar").click(function(){ 
   $.getJSON("http://localhost:8093/maven-spring-hibernate/servicios/usuario",function(result){
     $.each(result, function(i, campo){
       $("div").append("<li>"+campo.nombre + "</li> ");
     });
-
+  });
 });
 
-$("#boton1").click(function(){
-    $.ajax({
+$("#boton-guardar").click(function(){
+    var nombre=$("#nombre").val();
+    var sueldo=$("#sueldo").val();
+                $.ajax({
         method:'POST',
-        url:"/",
+        url:"http://localhost:8092/maven-spring-hibernate/servicios/usuario/"+nombre+"/"+sueldo,
         success:function(valor){
-            alert(valor)
+            alert(valor);
         },
         failure:function(e){
             alert(e);

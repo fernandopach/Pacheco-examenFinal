@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/")
 public class ControladorUsuario {
 
-    @RequestMapping(value="/usuario/{nombre}/{sueldo}", method=RequestMethod.GET, headers={"Accept=text/html"})
+    @RequestMapping(value="/usuario/{nombre}/{sueldo}", method=RequestMethod.POST, headers={"Accept=text/html"})
     public @ResponseBody String metodo(@PathVariable String nombre, @PathVariable float sueldo){
         /*
         Esto esta mal, alerta de lo que no se debe hacer, esta clase que le puse de nombre Guarda NO USA UNA SESION A PRUEBA DE THREASD NI NADA
@@ -38,7 +38,7 @@ public class ControladorUsuario {
  DAOUsuarioImpl du=new DAOUsuarioImpl();
  du.agregarProducto(new Usuario(nombre, sueldo)); 
  
-        return nombre +" ya se ha guardado, este esta pesimo, no es thead safe, no maneja nada de TheradsLocal ni nada, CORRIGELOOOOO!!!";
+        return nombre +" ya se ha guardado, este esta pesimo, no es thead safe, no maneja nada de TheradsLocal ni nada, CORRIJELO PERO A LA YA!!!";
     }
     
     @RequestMapping(value="/usuario", method=RequestMethod.GET, headers={"Accept=application/json"})
