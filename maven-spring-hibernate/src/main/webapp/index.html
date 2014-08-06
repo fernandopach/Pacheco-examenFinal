@@ -29,7 +29,7 @@
         
        $("#boton-recobrar").click(function(){ 
         $("#todos").show();/* Este hace que se vea la chingadera de menu */   
-        $("#todos").empty(); /* con esta funcion empty vaciamos todo, si  no se te juntaran un chingo de registros en el div */   
+        $("#todos").empty(); /* con esta funcion empty vaciamos todo, si  no se te juntaran un chingo de registros en el select de html */   
   $.getJSON("http://localhost:8092/maven-spring-hibernate/servicios/usuario",function(result){
     $.each(result, function(i, campo){
       $("#todos").append("<option>"+campo.nombre + "</option> ");
