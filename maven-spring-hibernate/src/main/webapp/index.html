@@ -19,13 +19,20 @@
         <input type="text" id="nombre" />
         <input type="text" id="sueldo" />
         <input type="button" value="guardar usuario" id="boton-guardar">
-        
+        <input type="button" id="boton-recobrar" value="recobrar todos">
+       
+        <select name="nombres" id="todos" hidden>
+             
+            </select>
+       
         <script>
         
        $("#boton-recobrar").click(function(){ 
-  $.getJSON("http://localhost:8093/maven-spring-hibernate/servicios/usuario",function(result){
+        $("#todos").show();/* Este hace que se vea la chingadera de menu */   
+        $("#todos").empty(); /* con esta funcion empty vaciamos todo, si  no se te juntaran un chingo de registros en el div */   
+  $.getJSON("http://localhost:8092/maven-spring-hibernate/servicios/usuario",function(result){
     $.each(result, function(i, campo){
-      $("div").append("<li>"+campo.nombre + "</li> ");
+      $("#todos").append("<option>"+campo.nombre + "</option> ");
     });
   });
 });
