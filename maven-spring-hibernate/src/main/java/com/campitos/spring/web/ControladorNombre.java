@@ -19,22 +19,22 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 @RequestMapping("/")
-public class ControladorAlumno {
+public class ControladorNombre {
     
  /*
     Creamos el metodo para insertar el alumno
   */   
     
-    @RequestMapping(value="/alumno/{nombre}/{email}", method=RequestMethod.GET, headers={"Accept=text/html"})
-    public @ResponseBody String mensajito(@PathVariable String nombre, @PathVariable String email){
-           DAOAlumnoImpl d= new DAOAlumnoImpl();
-           d.agregarAlumno(new Alumno(nombre, email));
-           return "Alumno guardado con exito";
+    @RequestMapping(value="/nombre/{precio}/{unidades}", method=RequestMethod.GET, headers={"Accept=text/html"})
+    public @ResponseBody String mensajito(@PathVariable String nombre, @PathVariable float precio, @PathVariable int unidades){
+           DAONombreImpl d= new DAONombreImpl();
+           d.agregarAlumno(new nombre(precio, unidades));
+           return "Nombre guardado con exito";
     }
     
-    @RequestMapping(value="/alumno", method=RequestMethod.GET, headers={"Accept=application/json"})
+    @RequestMapping(value="/nombre", method=RequestMethod.GET, headers={"Accept=application/json"})
     public @ResponseBody String metodo2()throws Exception {
-        DAOAlumnoImpl d=new DAOAlumnoImpl();
+        DAONombreImpl d=new DAONombreImpl();
         ObjectMapper maper=new ObjectMapper();
             
         return maper.writeValueAsString(d.buscarTodosAlumnos());

@@ -16,7 +16,7 @@ import org.hibernate.Query;
  *
  * @author T-10A
  */
-public class DAOAlumnoImpl extends DAO {
+public class DAONombreImpl extends DAO {
     
  public void agregarAlumno(Alumno alumno) {
     begin();
